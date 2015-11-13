@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="navbar-inner">
       <div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
-      <div class="center"><?php echo $itemData[0]->title ?></div>
+      <?php echo '<div class="center" id="'.$itemData[0]->id.'">'. $itemData[0]->title .'</div>'; ?>
       <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
     </div>
   </div>
@@ -16,9 +16,12 @@
         }
         switch($itemData->classify){
           case 'text':
-            $content = $itemData->content;
+            $content = '<h2>'.$itemData->content.'</h2>';
             break;
           case 'picture':
+            $content = '<img width="100%" src="' . $itemData->content . '">';
+            break;
+          case 'gif':
             $content = '<img width="100%" src="' . $itemData->content . '">';
             break;
           default:
@@ -36,11 +39,11 @@
                 <div class="card-content">
                   <div class="card-content-inner">
                     '.$content.'
-                    <p class="color-gray">Likes: 112 &nbsp;&nbsp; Comments: 43</p>
                     <div class="card-footer no-border">
-                      <a class="link" href="#">喜欢</a>
-                      <a class="link" href="#">Comment</a>
-                      <a class="link" href="#">Share</a>
+                      <span id="like-num">'. $itemData->lookNum .'</span>
+                      <a class="link" href="#" id="like">喜欢</a>
+                      <a class="link" href="#" id="comment">评论</a>
+                      <a class="link" href="#" id="share">分享</a>
                     </div>
                   </div>
               </div>

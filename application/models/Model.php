@@ -16,6 +16,16 @@ class Model extends CI_Model {
 //		echo $this->db->last_query();
 		return $query->result();
 	}
+	function lookNumOperation($id,$action){
+		$where['id'] = $id;
+		if($action == "add"){
+			$this->db->set('lookNum','lookNum+1',false);
+		}elseif($action == "minus"){
+			$this->db->set('lookNum','lookNum-1',false);
+		}
+		$this->db->where($where);
+		$this->db->update('bed_content');
+	}
 	//查
 	function select($select,$table,$where,$limit="",$order=""){
 		$this->db->select($select);

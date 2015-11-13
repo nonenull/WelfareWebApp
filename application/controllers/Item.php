@@ -8,8 +8,13 @@ class Item extends CI_Controller {
 		$this->load->view('item',$data);
 	}
 	public function getItemContent($id){
-		$select = array('title','lookNum','content','description','classify','createTime');
+		$select = array('id','title','lookNum','content','description','classify','createTime');
 		$where['id'] = $id;
 		return $this->Model->select($select,'bed_content',$where,1);
+	}
+	public function lookNum(){
+		$id = $this->input->post('id');
+		$action = $this->input->post('action');
+		$this->Model->lookNumOperation($id,$action);
 	}
 }

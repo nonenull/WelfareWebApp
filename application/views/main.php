@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="static/css/framework7.material.css">
     <link rel="stylesheet" href="static/css/framework7.material.colors.css">
     <link rel="stylesheet" href="static/css/kitchen-sink.css">
+    <script type="text/javascript" src="static/js/framework7.js"></script>
 </head>
 <body>
 <div class="statusbar-overlay"></div>
@@ -104,7 +105,7 @@
                                     <div class="item-title-row">
                                         <div class="item-title">'.$v->title.'</div>
                                     </div>
-                                    <div class="item-subtitle">'.$v->lookNum.$v->classify.'</div>
+                                    <div class="item-subtitle">'.$v->classify.'</div>
                                 </div>
                             </a></li>';
                         }
@@ -116,7 +117,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="static/js/framework7.js"></script>
 <script type="text/javascript" src="static/js/framework7.upscroller.min.js"></script>
 <script type="text/javascript" src="static/js/script.js"></script>
 <style>
@@ -130,8 +130,50 @@
         width:34px;
         height:34px;
     }
+    .card-footer {
+        margin-top:10px;
+    }
+    .card-footer #like-num {
+        position: absolute;
+        top: 1px;
+        display: block;
+        left: 5%;
+        margin-left: -12px;
+        color: #fff;
+        border-radius: 4px;
+        line-height: 14px;
+        padding: 1px 5px 1px 5px;
+        text-align: center;
+        font-family: Calibri;
+        background: #f489ad;
+        font-size: 12px;
+        min-width: 18px;
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto Light'), local('Roboto-Light'), url('/static/font/Hgo13k-tfSpn0qi1SFdUfaCWcynf_cDxXwCLxiixG1c.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Roboto'), local('Roboto-Regular'), url('/static/font/zN7GBFwfMP4uA6AR0HCoLQ.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Roboto Medium'), local('Roboto-Medium'), url('/static/font/RxZJdnzeo3R5zSexge8UUaCWcynf_cDxXwCLxiixG1c.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Roboto Bold'), local('Roboto-Bold'), url('/static/font/d-6IYplOFocCacKzxwXSOKCWcynf_cDxXwCLxiixG1c.ttf') format('truetype');
+    }
 </style>
-<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
 <link href="static/css/framework7.upscroller.min.css" rel="stylesheet" type="text/css">
 </body>
 </html>
